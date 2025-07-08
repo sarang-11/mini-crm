@@ -1,0 +1,147 @@
+/* ===== Custom Theme (Lusion-inspired) ===== */
+:root {
+  --primary: #18026a;
+  --secondary: #6c5ce7;
+  --bg-dark: #0f1016;
+  --bg-card: #1c1f2e;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+}
+
+/* ===== Body Layout ===== */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  background-color: #000d1a !important;  
+  border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.sidebar a,
+.sidebar a.nav-link {
+  color: var(--text-light) !important;
+}
+
+.sidebar a:hover {
+  background-color: #152a45 !important;
+  color: #ffffff;
+}
+
+/* ===== Content Styling ===== */
+.content-wrapper {
+  background-color: var(--bg-dark);
+  min-height: 100vh;
+}
+
+/* ===== Typography & UI ===== */
+h1, h2, h3, h4, h5, h6,
+a, .nav-link, label,
+.card p, .card span, .card strong {
+  color: var(--text-light) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #dddddd;
+}
+
+/* ===== Cards and Glass Boxes ===== */
+.card, .bg-glassy {
+  background-color: var(--bg-card) !important;
+  color: var(--text-light);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.025);
+}
+
+.card .text-muted,
+.card h4,
+.card h5,
+.card span,
+.card p,
+.card strong {
+  color: var(--text-light) !important;
+}
+
+/* ===== Tables ===== */
+.table td, .table th {
+  vertical-align: middle;
+  color: var(--text-light);
+}
+
+.table th {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* ===== Toasts ===== */
+.toast {
+  opacity: 0.95;
+}
+
+/* ===== Forms ===== */
+.form-select, input, textarea {
+  background-color: var(--bg-card);
+  color: var(--text-light);
+  border: 1px solid #333;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ===== Badge Styling ===== */
+.badge {
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+.badge-new {
+  background-color: #007bff;
+  color: white;
+}
+
+.badge-converted {
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-dropped {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* ===== Recently Updated List (Refined) ===== */
+.recent-leads-list {
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.recent-leads-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-light);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 4px;
+}
+
+.recent-leads-list .badge {
+  margin-left: 10px;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+}

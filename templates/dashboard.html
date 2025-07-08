@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4">Dashboard Overview</h2>
+
+  <!-- Total Leads -->
+  <div class="mb-3">
+    <h5>Total Leads: <strong>{{ total_leads }}</strong></h5>
+  </div>
+
+  <div class="row text-center mb-4">
+  <!-- 🔵 Total Leads -->
+  <div class="col-md-3 mb-3">
+    <div class="card p-4">
+      <h5 class="text-uppercase text-muted mb-2">Total Leads</h5>
+      <h2 class="mb-0">{{ total_leads }}</h2>
+      <span class="badge bg-secondary">All</span>
+    </div>
+  </div>
+
+  <!-- 🟢 Converted -->
+  <div class="col-md-3 mb-3">
+    <div class="card p-4">
+      <h5 class="text-uppercase text-muted mb-2">Converted</h5>
+      <h2 class="mb-0">{{ status_counts['Converted'] }}</h2>
+      <span class="badge badge-converted">Converted</span>
+    </div>
+  </div>
+
+  <!-- 🔴 Dropped -->
+  <div class="col-md-3 mb-3">
+    <div class="card p-4">
+      <h5 class="text-uppercase text-muted mb-2">Dropped</h5>
+      <h2 class="mb-0">{{ status_counts['Dropped'] }}</h2>
+      <span class="badge badge-dropped">Dropped</span>
+    </div>
+  </div>
+
+  <!-- 🔵 New -->
+  <div class="col-md-3 mb-3">
+    <div class="card p-4">
+      <h5 class="text-uppercase text-muted mb-2">New</h5>
+      <h2 class="mb-0">{{ status_counts['New'] }}</h2>
+      <span class="badge badge-new">New</span>
+    </div>
+  </div>
+ </div>
+
+
+  <!-- Upcoming Follow-ups -->
+  <div class="card p-3 mb-4">
+    <h5> Upcoming Follow-ups (Next 7 Days)</h5>
+    {% if upcoming_followups %}
+      <ul class="recent-leads-list">
+        {% for lead in upcoming_followups %}
+          <li>
+            {{ lead.name }} – {{ lead.next_followup.strftime('%Y-%m-%d') }}
+            <span class="badge badge-{{ lead.status|lower }}">{{ lead.status }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-muted mt-2">No follow-ups in the next 7 days.</p>
+    {% endif %}
+  </div>
+
+  <!-- Recently Updated Leads -->
+  <div class="card p-3">
+    <h5> Recently Updated Leads</h5>
+    {% if recent_leads %}
+      <ul class="recent-leads-list">
+        {% for lead in recent_leads %}
+          <li>
+            {{ lead.name }} – {{ lead.updated_at.strftime('%Y-%m-%d') }}
+            <span class="badge badge-{{ lead.status|lower }}">{{ lead.status }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-muted mt-2">No recent updates.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

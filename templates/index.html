@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="row mb-4">
+  <div class="col">
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Total Leads</h5>
+        <p class="card-text fs-4">{{ total_leads }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card text-white bg-success mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Converted</h5>
+        <p class="card-text fs-4">{{ converted }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Today's Follow-ups</h4>
+<ul>
+  {% for lead in today_list %}
+    <li>{{ lead.name }} - {{ lead.email }}</li>
+  {% else %}
+    <li>No follow-ups today</li>
+  {% endfor %}
+</ul>
+
+<h4>Tomorrow's Follow-ups</h4>
+<ul>
+  {% for lead in tomorrow_list %}
+    <li>{{ lead.name }} - {{ lead.email }}</li>
+  {% else %}
+    <li>No follow-ups tomorrow</li>
+  {% endfor %}
+</ul>
+{% endblock %}

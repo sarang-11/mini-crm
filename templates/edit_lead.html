@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <div class="card glassy p-4">
+    <h2 class="text-light mb-4"> Edit Lead</h2>
+    <form method="POST">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label text-light">Name</label>
+          <input type="text" name="name" value="{{ lead.name }}" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label text-light">Email</label>
+          <input type="email" name="email" value="{{ lead.email }}" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label text-light">Status</label>
+          <select name="status" class="form-select" required>
+            <option value="new" {% if lead.status == 'new' %}selected{% endif %}>New</option>
+            <option value="contacted" {% if lead.status == 'contacted' %}selected{% endif %}>Contacted</option>
+            <option value="converted" {% if lead.status == 'converted' %}selected{% endif %}>Converted</option>
+            <option value="dropped" {% if lead.status == 'dropped' %}selected{% endif %}>Dropped</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label text-light">Lead Score</label>
+          <input type="number" name="score" value="{{ lead.score }}" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label text-light">Next Follow-up</label>
+          <input type="date" name="next_followup" value="{{ lead.next_followup }}" class="form-control" required>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label text-light">Notes</label>
+          <textarea name="notes" rows="3" class="form-control">{{ lead.notes }}</textarea>
+        </div>
+      </div>
+      <div class="mt-4 text-end">
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="{{ url_for('view_leads') }}" class="btn btn-secondary ms-2">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
