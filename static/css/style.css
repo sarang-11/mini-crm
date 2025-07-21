@@ -1,4 +1,4 @@
-/* ===== Custom Theme (Lusion-inspired) ===== */
+
 :root {
   --primary: #18026a;
   --secondary: #6c5ce7;
@@ -8,7 +8,7 @@
   --text-muted: #cccccc;
 }
 
-/* ===== Body Layout ===== */
+/* Body Layout */
 body {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -16,7 +16,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* ===== Sidebar ===== */
+/* Sidebar */
 .sidebar {
   background-color: #000d1a !important;  
   border-right: 1px solid rgba(255,255,255,0.03);
@@ -32,13 +32,13 @@ body {
   color: #ffffff;
 }
 
-/* ===== Content Styling ===== */
+/* Content Styling */
 .content-wrapper {
   background-color: var(--bg-dark);
   min-height: 100vh;
 }
 
-/* ===== Typography & UI ===== */
+/* Typography & UI */
 h1, h2, h3, h4, h5, h6,
 a, .nav-link, label,
 .card p, .card span, .card strong {
@@ -54,7 +54,7 @@ a:hover {
   color: #dddddd;
 }
 
-/* ===== Cards and Glass Boxes ===== */
+/* Cards and Glass Boxes */
 .card, .bg-glassy {
   background-color: var(--bg-card) !important;
   color: var(--text-light);
@@ -71,7 +71,7 @@ a:hover {
   color: var(--text-light) !important;
 }
 
-/* ===== Tables ===== */
+/* Tables */
 .table td, .table th {
   vertical-align: middle;
   color: var(--text-light);
@@ -82,25 +82,25 @@ a:hover {
   color: #fff;
 }
 
-/* ===== Toasts ===== */
+/* Toasts */
 .toast {
   opacity: 0.95;
 }
 
-/* ===== Forms ===== */
+/* Forms */
 .form-select, input, textarea {
   background-color: var(--bg-card);
   color: var(--text-light);
   border: 1px solid #333;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .btn {
   font-weight: 500;
   color: #ffffff;
 }
 
-/* ===== Badge Styling ===== */
+/* Badge Styling */
 .badge {
   padding: 6px 12px;
   font-weight: 600;
@@ -123,7 +123,7 @@ a:hover {
   color: white;
 }
 
-/* ===== Recently Updated List (Refined) ===== */
+/* Recently Updated List */
 .recent-leads-list {
   padding-left: 1rem;
   margin-top: 1rem;
